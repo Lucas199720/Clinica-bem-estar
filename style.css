@@ -1,0 +1,396 @@
+/* =========================================
+   1. Configurações Gerais (Reset)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Troque 'fundo.jpg' pelo nome real e extensão da sua imagem */
+    background-image: url('Fundo_clinica.jpg'); 
+    
+    /* Faz a imagem cobrir a tela inteira sem distorcer */
+    background-size: cover; 
+    
+    /* Centraliza a imagem na tela */
+    background-position: center; 
+    
+    /* Evita que a imagem se repita como um mosaico se a tela for muito grande */
+    background-repeat: no-repeat; 
+    
+    /* DEIXA O FUNDO FIXO! O conteúdo rola, mas a imagem fica parada */
+    background-attachment: fixed; 
+    
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================
+   2. Cabeçalho (Header)
+========================================= */
+header {
+    background-color: #005f73; /* Azul profissional */
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   3. Seções Gerais
+========================================= */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto; /* Centraliza a seção na tela */
+}
+
+h2 {
+    text-align: center;
+    color: #005f73;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   Estilos específicos para a Seção de Serviços (Visual de Grade)
+========================================= */
+.secao-servicos {
+    padding: 60px 20px;
+    background-color: #ffffff; /* Fundo totalmente branco como na imagem */
+    border-radius: 15px;
+}
+
+.titulo-secao {
+    text-align: center;
+    color: #17659b; /* Azul escuro da imagem */
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-transform: uppercase; /* Deixa tudo em MAIÚSCULO */
+}
+
+/* =========================================
+   Imagens dos Serviços
+========================================= */
+.img-servico {
+    width: 100%;
+    max-width: 500px; /* Evita que a foto fique gigante na tela do computador */
+    height: 300px; /* Trava a altura para todas ficarem iguais */
+    object-fit: cover; /* Corta o excesso da foto sem amassar ou distorcer */
+    border-radius: 12px; /* Deixa os cantinhos arredondados */
+    margin-bottom: 20px; /* Dá um espaço entre a foto e o título da especialidade */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Uma sombra leve para dar destaque */
+}
+.grade-servicos {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 única coluna (coloca cada item em uma linha) */
+    gap: 40px; /* Espaço entre um serviço e outro */
+    max-width: 800px; /* Reduzi a largura para o texto não ficar muito esticado no computador */
+    margin: 0 auto; /* Mantém tudo centralizado na tela */
+    align-items: center; 
+}
+
+/* Estilo de cada bloco de texto */
+.item-servico {
+    text-align: center;
+    padding: 10px;
+}
+
+.item-servico h3 {
+    color: #17659b; /* Mesmo azul do título */
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.item-servico p {
+    color: black; /* Cinza escuro para boa leitura */
+    font-size: 15px;
+    line-height: 1.6; /* Espaçamento entre as linhas do texto */
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão "> Saiba mais" */
+.link-saiba-mais {
+    color: #9b59b6; /* Roxo da imagem */
+    text-decoration: none; /* Tira o sublinhado padrão dos links */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.link-saiba-mais:hover {
+    color: #732d91; /* Fica um roxo mais escuro ao passar o mouse */
+    text-decoration: underline; /* Coloca o sublinhado ao passar o mouse */
+}
+
+/* =========================================
+   Responsividade (Para Celular e Tablet)
+========================================= */
+@media (max-width: 900px) {
+    .grade-servicos {
+        grid-template-columns: repeat(2, 1fr); /* Em telas médias, vira 2 colunas */
+    }
+}
+
+@media (max-width: 600px) {
+    .grade-servicos {
+        grid-template-columns: 1fr; /* No celular, fica 1 coluna só (uma embaixo da outra) */
+    }
+}
+
+.card, .card-equipe {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px; /* Largura padrão das caixas */
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .card-equipe:hover {
+    transform: translateY(-5px); /* Efeito de flutuar ao passar o mouse */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card-equipe img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #0a9396;
+}
+
+/* =========================================
+   Seção de Agendamento (Lado a Lado)
+========================================= */
+#agendamento {
+    background-color: #ffffff; /* Fundo branco para facilitar leitura */
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 1100px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.agendamento-container {
+    display: flex; /* Cria as colunas */
+    gap: 50px; /* Espaço entre o texto e o formulário */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/* Estilo da parte de texto */
+.texto-clinica {
+    flex: 1; /* Ocupa 50% do espaço */
+}
+
+.texto-clinica h2 {
+    text-align: left; /* Título alinhado à esquerda neste bloco */
+    margin-bottom: 20px;
+}
+
+.texto-clinica p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.diferenciais {
+    list-style: none; /* Tira as bolinhas padrão */
+    padding: 0;
+}
+
+.diferenciais li {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #005f73;
+}
+
+/* Estilo do formulário */
+.formulario-container {
+    flex: 1; /* Ocupa os outros 50% */
+    background-color: #f9f9f9; /* Um fundo cinza bem clarinho para o form */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.formulario-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Ajuste dos inputs para ocuparem a largura toda da coluna deles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsividade: No celular, as colunas viram linhas */
+@media (max-width: 800px) {
+    .agendamento-container {
+        flex-direction: column;
+    }
+    
+    .texto-clinica, .formulario-container {
+        width: 100%;
+    }
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0a9396; /* Cor mais clara ao passar o mouse */
+}
+/* =========================================
+   Estilo da Seção da Equipe (Fundo Branco)
+========================================= */
+#equipe {
+    background-color: #ffffff; /* Deixa o fundo totalmente branco */
+    border-radius: 15px; /* Arredonda os cantos do bloco principal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Cria uma sombra suave para destacar da imagem de fundo */
+    margin-top: 50px; /* Dá um respiro da seção de cima */
+    margin-bottom: 50px; /* Dá um respiro antes do formulário */
+}
+
+/* =========================================
+   Layout da Equipe (Lado a Lado)
+========================================= */
+.conteudo-equipe {
+    display: flex;
+    gap: 50px; /* Espaço entre os médicos e os convênios */
+    align-items: flex-start; /* Alinha tudo pelo topo */
+}
+
+.fotos-equipe {
+    flex: 2; 
+    display: flex;
+    flex-direction: column; /* Isso faz as fotos ficarem uma abaixo da outra */
+    gap: 30px;              /* Espaço entre um médico e outro */
+    align-items: center;    /* Centraliza os cards dos médicos na coluna */
+}
+.card-equipe {
+    width: 100%;
+    max-width: 350px; /* Define um tamanho máximo elegante para o card */
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    /* Adiciona uma borda ou sombra se quiser destacar cada médico individualmente */
+    border: 1px solid #eee; 
+}
+
+/* A coluna das informações ocupa o restante do espaço */
+.info-lateral {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaço entre os Convênios e as Redes Sociais */
+    background-color: #f9f9f9; /* Um fundo cinza claro para destacar do fundo branco da equipe */
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* Estilo da lista de Convênios */
+.bloco-convenios h3, .bloco-redes h3 {
+    color: #17659b;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.bloco-convenios ul {
+    list-style: none; /* Tira as bolinhas padrão */
+    padding: 0;
+    margin: 0;
+}
+
+.bloco-convenios li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    font-weight: 500;
+}
+
+.bloco-convenios li:last-child {
+    border-bottom: none; /* Tira a linha do último item */
+}
+
+/* Estilo dos Botões de Redes Sociais */
+.links-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-social {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+.btn-social:hover {
+    opacity: 0.8; /* Efeito de brilho ao passar o mouse */
+}
+
+/* Cores específicas para cada rede social */
+.instagram { background-color: #E1306C; }
+.facebook { background-color: #1877F2; }
+.whatsapp { background-color: #25D366; }
+
+/* =========================================
+   Responsividade (Para Celular)
+========================================= */
+@media (max-width: 800px) {
+    .conteudo-equipe {
+        flex-direction: column; /* Coloca os convênios embaixo dos médicos no celular */
+    }
+    
+    .fotos-equipe, .info-lateral {
+        width: 100%;
+    }
+}
